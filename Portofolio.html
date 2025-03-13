@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotini Poutou | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Foteini Poutou</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#skills" class="hover:text-blue-600">Skills</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-100 to-purple-100 py-20 text-center" id="hero">
+    <div class="max-w-xl mx-auto" data-sr>
+      <h2 class="text-4xl font-bold mb-4">Hello, I'm Foteini</h2>
+      <p class="text-lg">Junior Web Developer & Aspiring Data Analyst based in Volos</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="max-w-4xl mx-auto px-4 py-16" id="about" data-sr>
+    <h3 class="text-2xl font-bold mb-4">About Me</h3>
+    <p>
+      I am a Computer Science graduate with a strong interest in web development, data analysis, and WordPress. I'm a fast learner, organized, and always eager to grow professionally.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="bg-white py-16" id="skills">
+    <div class="max-w-4xl mx-auto px-4" data-sr>
+      <h3 class="text-2xl font-bold mb-6">Skills</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">HTML</span>
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">CSS</span>
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">JavaScript</span>
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">SQL</span>
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Python</span>
+        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">WordPress</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-4xl mx-auto px-4 py-16" id="projects" data-sr>
+    <h3 class="text-2xl font-bold mb-6">Projects</h3>
+    <ul class="space-y-4">
+      <li class="p-4 bg-gray-100 rounded-xl shadow">
+        <h4 class="font-bold">Portfolio Website</h4>
+        <p>Personal website built with HTML, CSS and TailwindCSS. Showcasing my work and contact info.</p>
+      </li>
+      <li class="p-4 bg-gray-100 rounded-xl shadow">
+        <h4 class="font-bold">COVID Data Dashboard</h4>
+        <p>Analyzed public COVID data using Python and SQL. Created data visualizations to show trends.</p>
+      </li>
+      <li class="p-4 bg-gray-100 rounded-xl shadow">
+        <h4 class="font-bold">WordPress Business Site</h4>
+        <p>Developed a full website for a local coffee shop using WordPress and Elementor.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-blue-50 py-16" id="contact">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-sr>
+      <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
+      <p>Email: <a href="mailto:foteinipoutou@hotmail.com" class="text-blue-600">foteinipoutou@hotmail.com</a></p>
+      <p>GitHub: <a href="#" class="text-blue-600">(add your GitHub link)</a></p>
+      <p>LinkedIn: <a href="#" class="text-blue-600">(add your LinkedIn)</a></p>
+    </div>
+  </section>
+
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      interval: 200
+    });
+  </script>
+</body>
+</html>
