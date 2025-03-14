@@ -3,35 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fotini Poutou | Portfolio</title>
+  <title>Foteini Poutou | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <style>
+     #triangleCanvas {
+      display: block;
+      margin: 10px auto;
+      border: 2px solid black;
+    }
+    #rainEffect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 40px solid;
+      opacity: 0.8;
+      animation: fall 4s linear infinite;
+    }
+    @keyframes fall {
+      from { transform: translateY(-100px) rotate(0deg); }
+      to { transform: translateY(100vh) rotate(360deg); }
+    }
+    .sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: gold;
+    border-radius: 50%;
+    opacity: 1;
+    animation: sparkleAnimation 0.8s ease-out forwards;
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) translate(-10px, -10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) translate(20px, 20px);
+        opacity: 0;
+    }
+}
+
+  </style>
+    
+  <style>
     body {
       font-family: 'Inter', sans-serif;
-      <!-- Triangle Interaction Section -->
-<section id="triangle-section" class="text-center py-10">
-    <h1 class="text-4xl font-bold">👋 Καλώς ήρθες, Φωτεινή!</h1>
-    <p class="text-lg mt-4">Δώσε 3 αριθμούς από 1 έως 100:</p>
-    <div class="mt-4">
-        <input type="number" id="num1" min="1" max="100" class="border rounded p-2 mx-1">
-        <input type="number" id="num2" min="1" max="100" class="border rounded p-2 mx-1">
-        <input type="number" id="num3" min="1" max="100" class="border rounded p-2 mx-1">
-        <button onclick="generateTriangle()" class="bg-blue-500 text-white px-4 py-2 rounded ml-2">
-            Δημιούργησε το τρίγωνό σου
-        </button>
-    </div>
-</section>
-
-<!-- Canvas για την εμφάνιση του τριγώνου -->
-<canvas id="triangleCanvas" class="mx-auto my-6 border border-gray-400"></canvas>
-
-<!-- Μήνυμα για το τρίγωνο -->
-<div id="triangle-message" class="text-center text-lg font-semibold"></div>
-
-<!-- Εφέ Βροχής από Τρίγωνα -->
-<div id="rainEffect"></div>
     }
   </style>
 </head>
@@ -39,12 +72,12 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-10">
     <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Foteini Poutou</h1>
+      <h1 class="text-2xl font-bold">Fotini Poutou</h1>
       <nav class="space-x-4">
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#skills" class="hover:text-blue-600">Skills</a>
-        <a href="#projects" class="hover:text-blue-600">Projects</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
+        <button><a href="#about" class="hover:text-blue-600">About</a></button>
+        <button><a href="#skills" class="hover:text-blue-600">Skills</a></button>
+        <button><a href="#projects" class="hover:text-blue-600">Projects</a></button>
+        <button><a href="#contact" class="hover:text-blue-600">Contact</a></button>
       </nav>
     </div>
   </header>
@@ -70,7 +103,7 @@
     <div class="max-w-4xl mx-auto px-4" data-sr>
       <h3 class="text-2xl font-bold mb-6">Skills</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">HTML</span>
+        <span class="bg-blue-100 text-black-800 px-4 py-2 rounded-full">HTML</span>
         <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">CSS</span>
         <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">JavaScript</span>
         <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">SQL</span>
@@ -79,6 +112,29 @@
       </div>
     </div>
   </section>
+  <!-- Triangle Interaction Section -->
+<section id="triangle-section" class="text-center py-10">
+    <h1 class="text-4xl font-bold">👋 Welcome to my portofolio!</h1>
+    <p class="text-lg mt-4">Give 3 numbers between 3 and 100:</p>
+    <div class="mt-4">
+        <input type="number" id="num1" min="1" max="100" class="border rounded p-2 mx-1">
+        <input type="number" id="num2" min="1" max="100" class="border rounded p-2 mx-1">
+        <input type="number" id="num3" min="1" max="100" class="border rounded p-2 mx-1">
+        <button onclick="generateTriangle(); createSparkle(event);" class="bg-blue-500 text-white px-4 py-2 rounded ml-2 relative overflow-hidden">
+            Create
+        </button>
+    </div>
+</section>
+
+<!-- Canvas για την εμφάνιση του τριγώνου -->
+<canvas id="triangleCanvas" width="500" height="500" class="mx-auto my-6 border border-gray-400"></canvas>
+
+<!-- Μήνυμα για το τρίγωνο -->
+<div id="triangle-message" class="text-center text-lg font-semibold"></div>
+
+<!-- Εφέ Βροχής από Τρίγωνα -->
+<div id="rainEffect"></div>
+
 
   <!-- Projects -->
   <section class="max-w-4xl mx-auto px-4 py-16" id="projects" data-sr>
@@ -110,13 +166,105 @@
   </section>
 
   <script>
-    ScrollReveal().reveal('[data-sr]', {
-      distance: '50px',
-      duration: 1000,
-      easing: 'ease-in-out',
-      origin: 'bottom',
-      interval: 200
-    });
-  </script>
+  function generateTriangle() {
+    let a = parseInt(document.getElementById("num1").value);
+    let b = parseInt(document.getElementById("num2").value);
+    let c = parseInt(document.getElementById("num3").value);
+
+    // Έλεγχος αν οι αριθμοί είναι έγκυροι
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Please enter valid numbers between 3 and 100.");
+        return;
+    }
+
+    if (a < 3 || b < 3 || c < 3 || a > 100 || b > 100 || c > 100) {
+        alert("Numbers must be between 3 and 100.");
+        return;
+    }
+
+    if (a + b > c && a + c > b && b + c > a) {
+        drawTriangle(a, b, c);
+        document.getElementById("triangle-message").innerHTML = "<h2>This is your triangle!</h2>";
+        setTimeout(startTriangleRain, 2000);
+    } else {
+        alert("These numbers do not form a valid triangle! Try again.");
+    }
+}
+
+function drawTriangle(a, b, c) {
+    let canvas = document.getElementById("triangleCanvas");
+    let ctx = canvas.getContext("2d");
+    canvas.width = 500;
+    canvas.height = 500;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let scaleFactor = Math.min(400 / Math.max(a, b, c), 1.5);
+    a *= scaleFactor;
+    b *= scaleFactor;
+    c *= scaleFactor;
+
+    ctx.beginPath();
+    ctx.moveTo(100, 400);
+    ctx.lineTo(100 + a, 400);
+    ctx.lineTo(100 + a / 2, 400 - b);
+    ctx.closePath();
+    ctx.fillStyle = "#FF5733";
+    ctx.fill();
+}
+
+function startTriangleRain() {
+    let colors = ["red", "blue", "green", "purple", "orange", "pink", "yellow"];
+    let rainEffect = document.getElementById("rainEffect");
+    rainEffect.innerHTML = ""; // Καθαρισμός
+    for (let i = 0; i < 50; i++) {
+        let tri = document.createElement("div");
+        tri.className = "triangle";
+        tri.style.left = Math.random() * window.innerWidth + "px";
+        tri.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        tri.style.borderBottomColor = colors[Math.floor(Math.random() * colors.length)];
+        rainEffect.appendChild(tri);
+    }
+    window.addEventListener('scroll', stopTriangleRain);
+    setTimeout(scrollToProjects, 3000);
+}
+
+function stopTriangleRain() {
+    let projectSection = document.getElementById("projects");
+    let rainEffect = document.getElementById("rainEffect");
+    let projectTop = projectSection.getBoundingClientRect().top;
+
+    if (projectTop <= window.innerHeight / 2) {
+        rainEffect.innerHTML = "";
+        window.removeEventListener('scroll', stopTriangleRain);
+    }
+}
+
+function scrollToProjects() {
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+}
+function createSparkle(event) {
+    let button = event.currentTarget;
+    let sparkleCount = 15; // Πόσα σωματίδια να δημιουργηθούν
+
+    for (let i = 0; i < sparkleCount; i++) {
+        let sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        button.appendChild(sparkle);
+
+        let x = Math.random() * button.clientWidth; // Τυχαία θέση μέσα στο κουμπί
+        let y = Math.random() * button.clientHeight;
+
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+
+        setTimeout(() => {
+            sparkle.remove(); // Αφαίρεση μετά από λίγο
+        }, 800);
+    }
+}
+
+
+    </script>
+    
 </body>
 </html>
