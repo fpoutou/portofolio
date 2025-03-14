@@ -10,6 +10,28 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      <!-- Triangle Interaction Section -->
+<section id="triangle-section" class="text-center py-10">
+    <h1 class="text-4xl font-bold">👋 Καλώς ήρθες, Φωτεινή!</h1>
+    <p class="text-lg mt-4">Δώσε 3 αριθμούς από 1 έως 100:</p>
+    <div class="mt-4">
+        <input type="number" id="num1" min="1" max="100" class="border rounded p-2 mx-1">
+        <input type="number" id="num2" min="1" max="100" class="border rounded p-2 mx-1">
+        <input type="number" id="num3" min="1" max="100" class="border rounded p-2 mx-1">
+        <button onclick="generateTriangle()" class="bg-blue-500 text-white px-4 py-2 rounded ml-2">
+            Δημιούργησε το τρίγωνό σου
+        </button>
+    </div>
+</section>
+
+<!-- Canvas για την εμφάνιση του τριγώνου -->
+<canvas id="triangleCanvas" class="mx-auto my-6 border border-gray-400"></canvas>
+
+<!-- Μήνυμα για το τρίγωνο -->
+<div id="triangle-message" class="text-center text-lg font-semibold"></div>
+
+<!-- Εφέ Βροχής από Τρίγωνα -->
+<div id="rainEffect"></div>
     }
   </style>
 </head>
