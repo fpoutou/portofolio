@@ -68,22 +68,22 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-#E0C4A0-50 text-#B6885D-800">
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-10">
     <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Fotini Poutou</h1>
+      <h1 class="text-2xl font-bold">Foteini Poutou</h1>
       <nav class="space-x-4">
-        <button><a href="#about" class="hover:text-blue-600">About</a></button>
-        <button><a href="#skills" class="hover:text-blue-600">Skills</a></button>
-        <button><a href="#projects" class="hover:text-blue-600">Projects</a></button>
-        <button><a href="#contact" class="hover:text-blue-600">Contact</a></button>
+        <button><a href="#about" class="hover:text-#FC703C-600">About</a></button>
+        <button><a href="#skills" class="hover:text-#5DO703-600">Skills</a></button>
+        <button><a href="#projects" class="hover:text-#F4F3E6-600">Projects</a></button>
+        <button><a href="#contact" class="hover:text-#FFA175-600">Contact</a></button>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-gradient-to-r from-blue-100 to-purple-100 py-20 text-center" id="hero">
+  <section class="bg-gradient-to-r from-#F3E9DC-100 to-#C08552-100 py-20 text-center" id="hero">
     <div class="max-w-xl mx-auto" data-sr>
       <h2 class="text-4xl font-bold mb-4">Hello, I'm Foteini</h2>
       <p class="text-lg">Junior Web Developer & Aspiring Data Analyst</p>
@@ -99,22 +99,22 @@
   </section>
 
   <!-- Skills -->
-  <section class="bg-white py-16" id="skills">
+  <section class="bg-#F3E9DC py-16" id="skills">
     <div class="max-w-4xl mx-auto px-4" data-sr>
       <h3 class="text-2xl font-bold mb-6">Skills</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <span class="bg-blue-100 text-black-800 px-4 py-2 rounded-full">HTML</span>
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">CSS</span>
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">JavaScript</span>
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">SQL</span>
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Python</span>
-        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">WordPress</span>
+        <span class="bg-#895737-100 text-black-800 px-4 py-2 rounded-full">HTML</span>
+        <span class="bg-#895737-100 text-blue-800 px-4 py-2 rounded-full">CSS</span>
+        <span class="bg-#895737-100 text-blue-800 px-4 py-2 rounded-full">JavaScript</span>
+        <span class="bg-#895737-100 text-blue-800 px-4 py-2 rounded-full">SQL</span>
+        <span class="bg-#895737-100 text-blue-800 px-4 py-2 rounded-full">Python</span>
+        <span class="bg-#895737-100 text-blue-800 px-4 py-2 rounded-full">WordPress</span>
       </div>
     </div>
   </section>
   <!-- Triangle Interaction Section -->
 <section id="triangle-section" class="text-center py-10">
-    <h1 class="text-4xl font-bold">👋 Welcome to my portofolio!</h1>
+    <h1 class="text-4xl font-bold">👋 let's play a game!</h1>
     <p class="text-lg mt-4">Give 3 numbers between 3 and 100:</p>
     <div class="mt-4">
         <input type="number" id="num1" min="1" max="100" class="border rounded p-2 mx-1">
@@ -140,15 +140,15 @@
   <section class="max-w-4xl mx-auto px-4 py-16" id="projects" data-sr>
     <h3 class="text-2xl font-bold mb-6">Projects</h3>
     <ul class="space-y-4">
-      <li class="p-4 bg-gray-100 rounded-xl shadow">
+      <li class="p-4 bg-#AC7E54-100 rounded-xl shadow">
         <h4 class="font-bold">Portfolio Website</h4>
         <p>Personal website built with HTML, CSS and TailwindCSS. Showcasing my work and contact info.</p>
       </li>
-      <li class="p-4 bg-gray-100 rounded-xl shadow">
+      <li class="p-4 bg-#AC7E54-100 rounded-xl shadow">
         <h4 class="font-bold">COVID Data Dashboard</h4>
         <p>Analyzed public COVID data using Python and SQL. Created data visualizations to show trends.</p>
       </li>
-      <li class="p-4 bg-gray-100 rounded-xl shadow">
+      <li class="p-4 bg-#AC7E54-100 rounded-xl shadow">
         <h4 class="font-bold">WordPress Business Site</h4>
         <p>Developed a full website for a local coffee shop using WordPress and Elementor.</p>
       </li>
@@ -156,7 +156,7 @@
   </section>
 
   <!-- Contact -->
-  <section class="bg-blue-50 py-16" id="contact">
+  <section class="bg-#E8D288-50 py-16" id="contact">
     <div class="max-w-4xl mx-auto px-4 text-center" data-sr>
       <h3 class="text-2xl font-bold mb-4">Contact Me</h3>
       <p>Email: <a href="mailto:foteinipoutou@hotmail.com" class="text-blue-600">foteinipoutou@hotmail.com</a></p>
@@ -213,7 +213,7 @@ function drawTriangle(a, b, c) {
 }
 
 function startTriangleRain() {
-    let colors = ["#AFEEEE", "#AFE4EE", "#AFD9EE", "#AFCEEE", "#AFEEE4", "#AFEED9", "#AFEECE"];
+    let colors = ["#452815", "#73411F", "#B6885D", "#E0C4A0", "#E8D288"];
     let rainEffect = document.getElementById("rainEffect");
     rainEffect.innerHTML = ""; // Καθαρισμός
     for (let i = 0; i < 50; i++) {
